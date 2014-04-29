@@ -1,0 +1,5 @@
+Spring Quarter Sleep Patterns
+00.jpg || Data || Description (data recording process, etc)
+01.jpg || Base Layer || Hourly Grid
+02.jpg || By Week || Showing a shift during midterms
+03.jpg || By Day || Weekday and Miscellaneous averages

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Testing a JavaScript API</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('body').append('<p>Printed using dot.append function</p>');
+		console.log('this is a debug statement');
+		
+		var venues = {};
+		
+		$.ajax({
+		url :'http://classes.dma.ucla.edu/Summer13/160-1/api//live-shows.php?format=json',
+		dataType: 'json',
+		success: function(data) {
+			for (var i in data) {
+				var concert = data[i];
+				$('body').append('<p><a href="'+concert.url+'">'+concert.artist+'</a></p>');
+				if (venues[concert.venue] === undefined)
+				{
+					venues[concert.venue] = 1;
+				}
+				else
+				{
+					venues[concert.venue]++;
+				}
+			}
+			console.log(venues);
+		}
+		})
+		
+		
+	});
+	
+</script>
+</head>
+<body>
+<h1>Testing a JavaScript API</h1>
+</body>
+</html>
